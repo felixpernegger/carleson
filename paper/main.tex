@@ -75,7 +75,7 @@
 \newcommand{\N}{{\mathbb{N}}}
 \newcommand{\Z}{{\mathbb{Z}}}
 \newcommand{\Q}{{\mathbb{Q}}}
-\newcommand{\R}{{\mathbb{R}}}
+%\newcommand{\R}{{\mathbb{R}}}
 
 \DeclareMathOperator{\ch}{\operatorname{ch}}
 \DeclareMathOperator{\dens}{\operatorname{dens}}
@@ -323,8 +323,8 @@ The specific statement is as follows.
 
 \begin{theorem}[classical Carleson]
     \label{classical-carleson}
-    Let $f$ be a $2\pi$-periodic complex-valued continuous function on $\mathbb{R}$.
-    Then for almost all $x \in \mathbb{R}$, the limit
+    Let $f$ be a $2\pi$-periodic complex-valued continuous function on $\real$.
+    Then for almost all $x \in \real$, the limit
     $\lim_{N\to\infty} S_N f(x)$ exists and is equal to $f(x)$.
 \end{theorem}
 
@@ -336,7 +336,7 @@ The classical Carleson theorem is obtained by choosing a specific Carleson opera
 The specific version that has been formalized is this one:
 
 \begin{theorem}[real Carleson]\label{real-Carleson}
-    Let $F,G$ be Borel subsets of $\R$ with finite measure. Let $f$ be a bounded measurable function on $\R$ with $|f|\le \mathbf{1}_F$. Then
+    Let $F,G$ be Borel subsets of $\real$ with finite measure. Let $f$ be a bounded measurable function on $\real$ with $|f|\le \mathbf{1}_F$. Then
 \begin{equation}
     \left|\int _G Tf(x) \, dx\right| \le 2^{474 \cdot 4^3} |F|^{\frac 12} |G|^{\frac 12} \, ,
 \end{equation}
@@ -347,7 +347,7 @@ and
     T f(x)\coloneq\sup_{n\in \mathbb{Z}}
     \sup_{r>0}\left|\int_{r<|x-y|<1} f(y)\kappa(x-y) e^{iny}\, dy\right| \, ,
 \end{equation}
-with $\kappa: \R\to\C$ defined as
+with $\kappa\colon \real\to\C$ defined as
 \begin{equation}
     \kappa(x)\coloneq\begin{cases}
         0 & \text{if $x = 0$ or $|x| \ge 1$} \\
@@ -534,7 +534,7 @@ Given the variables and assumptions of \Cref{linearized-metric-Carleson}, define
 D := 2^{100a^2}
 \]
 and let
- $\psi:\R \to \R$ be the unique compactly supported, piecewise linear, continuous function with corners precisely at $\frac 1{4D}$, $\frac 1{2D}$, $\frac 14$ and $\frac 12$ which satisfies
+ $\psi\colon \real\to \real$ be the unique compactly supported, piecewise linear, continuous function with corners precisely at $\frac 1{4D}$, $\frac 1{2D}$, $\frac 14$ and $\frac 12$ which satisfies
  \begin{equation}
     \label{eq-psisum}
     \sum_{s\in \mathbb{Z}} \psi(D^{-s}x)=1
