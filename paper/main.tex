@@ -72,10 +72,8 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[subsection]
 
-\newcommand{\N}{{\mathbb{N}}}
 \newcommand{\Z}{{\mathbb{Z}}}
 \newcommand{\Q}{{\mathbb{Q}}}
-%\newcommand{\R}{{\mathbb{R}}}
 
 \DeclareMathOperator{\ch}{\operatorname{ch}}
 \DeclareMathOperator{\dens}{\operatorname{dens}}
@@ -204,7 +202,7 @@ after Lebesgue integration. For some other natural spaces, such as
 $L^1(0,2\pi)$, there is no guarantee of convergence in the norm of that space,
 even if $f$ is in the space.
 
-A second question is whether the sequence $\{ S_N f (x)\}_{\{ N \in \mathbb{N}\}}$ converges pointwise to $f(x)$ for almost every $x$. This turned out to be a significantly harder problem.
+A second question is whether the sequence $\{ S_N f (x)\}_{\{ N \in\Nat\}}$ converges pointwise to $f(x)$ for almost every $x$. This turned out to be a significantly harder problem.
 Luzin \cite{Luzin13} conjectured that this convergence would hold for functions in the
 $L^2(0,2\pi)$ space. In 1923, Kolmogorov found an example \cite{Kolmogorov} of an $L^1$ function whose Fourier series diverges at almost every point, which seemed to suggest that the conjecture might be false. However, when in the 1960s Carleson tried to construct a counterexample to Luzin's conjecture, he realized that a potential counterexample would have to satisfy so many properties that they would in fact be contradictory. He was therefore able to conclude that such a counterexample could not exist, hence proving Luzin's conjecture \cite{carleson}.
 
@@ -954,7 +952,7 @@ Therefore, while they were writing the blueprint, the authors of \cite{ThieleCar
 
 In the formalization, we introduced a constant \lean{c} with a value of 100, coming from the exponent of $D$.
 %\begin{minted}[escapeinside=||, mathescape=true]{lean}
-%irreducible_def c : |$\mathbb{N}$| := 100
+%irreducible_def c : |$\Nat$| := 100
 %\end{minted}
 Every other constant is defined in terms of $a$, $q$ and \lean{c}, and we use the notation convention \lean{Cx_y_z} to denote the constant appearing in result \lean{x.y.z} of the blueprint.
 
