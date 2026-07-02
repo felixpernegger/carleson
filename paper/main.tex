@@ -300,7 +300,7 @@ For a function $f$ on a (not necessarily doubling) measure space $(X,\mu)$ takin
   \|f\|_{L^{p,\infty}} \coloneq \sup_{t>0} t \cdot \mu (\{x\in X : t < |f(x)| \}) ^ \frac{1}{p}
 \end{equation}
 if $0<p<\infty$, and $\|f\|_{L^{\infty,\infty}} \coloneq \|f\|_{L^{\infty}}$.
-The function $f$ is said to be in weak $L^p$ (\lean{MemWLp}) if $f$ is $\mu$-a.e. strongly measurable with respect to a fixed topology on $E$ (see e.g. \cite{vanDoornFormalizedHaarMeasure, GouezelChangeOfVariables} for motivation of the different notions of measurability in mathlib) and $\|f\|_{L^{p,\infty}} < \infty$.
+The function $f$ is said to be in weak $L^p$ (\lean{MemWLp}) if $f$ is $\mu$-a.e. strongly measurable with respect to a fixed topology on $E$ (see e.g. \cite{vanDoornFormalizedHaarMeasure, GouezelChangeOfVariables} for motivation of the different notions of measurability in \mathlib) and $\|f\|_{L^{p,\infty}} < \infty$.
 An important consequence is that if $f$ is in weak $L^p$, then $|f|$ is finite almost everywhere (see \lean{MemWLp.ae_ne_top}).
 
 Given two measure spaces $(X,\mu)$ and $(Y,\nu)$, and two topological spaces $E$ and $F$ endowed with extended norms, we say that an operator $T : (X \to E) \to (Y \to F)$ is of weak type $(p,p')$ if there exists a constant $C$ such that for any $f\in L^p(X; E)$, we have that $T f$ is $\nu$-a.e. strongly measurable and
@@ -722,7 +722,7 @@ Lastly, we used a public channel of Lean's Zulip chat to discuss the project.
 We used this to post tasks needed for the formalization.
 Most of these tasks consisted of formalizing a single lemma,
 but some lemmas were split into multiple tasks, and some tasks consisted of something else,
-like refactoring existing code in either the Carleson project or Mathlib.
+like refactoring existing code in either the Carleson project or \mathlib.
 We also used Zulip to keep track of the status of these tasks:
 whether they were available, claimed or completed.
 Zulip was also used in case someone had questions about a task,
@@ -1112,9 +1112,9 @@ The final phase involved generalizing lemmas: often, this required small changes
 
 To illustrate the magnitude of this refactoring, let us give some statistics: phase two (changing the basic definitions) changed about 300 lines of code; phase three (changing lemma statements to enorms) about 1000, and the lemma generalizations so far touched about 2500 lines of code.
 
-The last phase (generalizing mathlib lemmas) is not exhaustive: while substantial parts of mathlib have been generalized, some areas would require further refactor (and will follow as needed). To give an example, the total variation of a path in $\ennreal$ is a sensible quantity, even though $\ennreal$ is not a metric space. Introducing a weaker notion of extended metric spaces will enable new applications, and also provide the proper abstraction to state many scalar multiplication lemmas nicely. This is an ongoing effort by Felix Pernegger.
+The last phase (generalizing \mathlib lemmas) is not exhaustive: while substantial parts of \mathlib have been generalized, some areas would require further refactor (and will follow as needed). To give an example, the total variation of a path in $\ennreal$ is a sensible quantity, even though $\ennreal$ is not a metric space. Introducing a weaker notion of extended metric spaces will enable new applications, and also provide the proper abstraction to state many scalar multiplication lemmas nicely. This is an ongoing effort by Felix Pernegger.
 
-The process of generalization revealed that this abstraction is also useful on its own: previously, many proofs in mathlib involved converting between norms taking values in $\real$ or $\nnreal$; using enorms provides a useful alternative. At the same time, it illustrates how the right abstractions can avoid duplicating work, while providing a useful clarification to mathematics.
+The process of generalization revealed that this abstraction is also useful on its own: previously, many proofs in \mathlib involved converting between norms taking values in $\real$ or $\nnreal$; using enorms provides a useful alternative. At the same time, it illustrates how the right abstractions can avoid duplicating work, while providing a useful clarification to mathematics.
 
 \subsection{Working with \texorpdfstring{$L^p$}{L\^{}p} functions}\label{subsec:Lp}
 
@@ -1127,7 +1127,7 @@ Formalization ergonomics, however, are greatly different: working with equivalen
 While the \lean{filter_upwards} tactic simplifies reducing results from almost every to every $x$, these details add up: it is easiest to omit the passage entirely by working with functions in $L^p$ (i.e., with \lean{MemLp} directly).
 
 % is this useful to say? could be removed
-Incidentally, lemmas in Mathlib are mostly stated for \lean{MemLp} instead of \lean{Lp}: this underscores this choice.
+Incidentally, lemmas in \mathlib are mostly stated for \lean{MemLp} instead of \lean{Lp}: this underscores this choice.
 % Does this have other reasons, such as transitioning between different function properties?
 
 This relates well with the use of enorms (\ref{subsec:enorm}): \lean{Lp E p µ} as a normed space requires functions with codomain in a Banach space; this excludes e.g.\ $\ennreal$ which does not possess a well-behaved subtraction operation. Phrasing lemmas using \lean{MemLp} first enables the generalization to $\ennreal$ in the first place.
@@ -1170,7 +1170,7 @@ where a relatively compact set is by definition a subset of a compact set).
 In Carleson, we originally started with functions that are bounded everywhere and have compact support,
 but we switched\footnote{see pull requests \href{https://github.com/fpvandoorn/carleson/pull/311}{311} and \href{https://github.com/fpvandoorn/carleson/pull/342}{342}} to functions that are only essentially bounded,
 but still have compact support.
-The reason for this is that Mathlib uses essentially bounded functions frequently in measure theory,
+The reason for this is that \mathlib uses essentially bounded functions frequently in measure theory,
 phrased as \lean{MemLp f ∞ μ}.
 
 These notions are mathematically very similar,
