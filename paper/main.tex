@@ -267,7 +267,7 @@ J.R. was supported in part by NSF grant DMS-2154835 and a HIM fellowship for the
 
 \subsection{Mathematical background}\label{subsec:background}
 The basic object of study in Carleson's theorem is the Fourier series of a periodic function on the real numbers.
-Given a $2\pi$-periodic function $f : \real \to \complex$ and $n \in \mathbb{Z}$, define the {\em $n$th Fourier coefficient} of $f$ as
+Given a $2\pi$-periodic function $f\colon \real \to \complex$ and $n \in \mathbb{Z}$, define the {\em $n$th Fourier coefficient} of $f$ as
 \begin{equation}\label{eq:fourier-coefficients}
     c_n \coloneq \widehat{f}_n \coloneq \frac 1{2\pi}\int_0^{2\pi}f(x) e^{- i nx}\, dx.
 \end{equation}
@@ -399,7 +399,7 @@ $$
 $$
 
 A one-sided Calder\'on--Zygmund kernel $K$ on the doubling metric measure space $(X, \rho, \mu, a)$
-is a measurable function $K:X\times X\to \mathbb{C}$ such that for all $x,y',y\in X$ with $x\neq y$, we have
+is a measurable function $K\colon X\times X\to \complex$ such that for all $x,y',y\in X$ with $x\neq y$, we have
 \begin{equation}\label{eqkernel-size}
     |K(x,y)| \leq \frac{2^{a^3}}{V(x,y)}
 \end{equation}
@@ -543,7 +543,7 @@ $[\frac1{2D},\frac 14]$, and is Lipschitz with constant $4D$. With this definiti
 \begin{theorem}[finitary Carleson]
 \label{finitary-Carleson}
 Let ${\sigma_1},\sigma_2\colon X\to \mathbb{Z}$ be measurable functions with finite range and ${\sigma_1}\leq \sigma_2$. Let $F,G$ be bounded Borel sets in $X$. Then there is a Borel set $G'$ in $X$ with $2\mu(G')\leq \mu(G)$ such that
-for all Borel functions $f:X\to \C$ with $|f|\le \mathbf{1}_F$ we have
+for all Borel functions $f\colon X\to \C$ with $|f|\le \mathbf{1}_F$ we have
 \begin{equation*}
     \int_{G \setminus G'} \left|\sum_{s={\sigma_1}(x)}^{{\sigma_2}(x)} \int K_s(x,y) f(y) e(\tQ(x)(y)) \, \mathrm{d}\mu(y) \right| \mathrm{d}\mu(x)
 \end{equation*}
